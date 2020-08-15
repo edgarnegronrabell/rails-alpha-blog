@@ -1,45 +1,33 @@
 <h1 class="title">Articles listing page</h1>
-
 <div class="container">
-	<% @articles.each do |article| %>
-		<div class="card">
-			<header class="card-header">
-				<p class="card-header-title">
-					by <%= article.user.username %>
-				</p>
-			</header>
-			<div class="card-content">
-				<div class="content">
-					<%= article.user.username %>
-					<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+	<div class="columns is-multiline">
+		<% @articles.each do |article| %>
+			<div class="card column is-one-third">
+				<header class="card-header">
+					<p class="card-header-title">
+					<%= article.title %>
+						by <%= article.user.username if article.user %>
+					</p>
+				</header>
+				<div class="card-content">
+					<div class="content">
+						<%= article.description %>
+					</div>
 				</div>
+				<footer class="card-footer">
+					<div class="card-footer-item">
+						<%= link_to 'Show', article_path(article) %>
+					</div>
+					<div class="card-footer-item">
+						<%= link_to 'Edit', edit_article_path(article) %>
+					</div>
+					<div class="card-footer-item">
+						<%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %>
+					</div>
+				</footer>
 			</div>
-			<footer class="card-footer">
-				<a href="#" class="card-footer-item">Save</a>
-				<a href="#" class="card-footer-item">Edit</a>
-				<a href="#" class="card-footer-item">Delete</a>
-			</footer>
-		</div>
-	<% end %>
-
+		<% end %>
+	</div>
 </div>
-<table>
-	<thead>
-		<tr>
-			<th>Title</th>
-			<th>Description</th>
-			<th colspan="3" >Actions</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td><%= article.title %></td>
-			<td><%= article.description %></td>
-			<td><%= link_to 'Show', article_path(article) %></td>
-			<td><%= link_to 'Edit', edit_article_path(article) %></td>
-			<td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
-		</tr>
-	</tbody>
-</table>
 
 <%= link_to  "Create new article", new_article_path %>
