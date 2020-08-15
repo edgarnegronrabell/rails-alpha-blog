@@ -1,0 +1,29 @@
+//Dark accent
+$flame-pea: #D7593C;
+// Light accent
+$new-york-pink: #D27970;
+//Main brand color.
+$green-spring: #AFB9AE;
+// Dark shades
+$pickled-bluewood:#273B48;
+// Light Shades
+$alabaster: #F7F5F5;
+// Success
+$fern: #6ab26c;
+// Warning
+$fire-bush: #e7a234;
+// Danger
+$pomegranate: #f44336;
+
+
+$primary: $green-spring;
+$info: $pickled-bluewood;
+$success: $fern;
+$warning: $fire-bush;
+$danger: $pomegranate;
+
+$primary-invert: #000;
+
+.button {
+	border: none;
+}

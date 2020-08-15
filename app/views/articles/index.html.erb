@@ -1,5 +1,28 @@
 <h1 class="title">Articles listing page</h1>
 
+<div class="container">
+	<% @articles.each do |article| %>
+		<div class="card">
+			<header class="card-header">
+				<p class="card-header-title">
+					by <%= article.user.username %>
+				</p>
+			</header>
+			<div class="card-content">
+				<div class="content">
+					<%= article.user.username %>
+					<time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+				</div>
+			</div>
+			<footer class="card-footer">
+				<a href="#" class="card-footer-item">Save</a>
+				<a href="#" class="card-footer-item">Edit</a>
+				<a href="#" class="card-footer-item">Delete</a>
+			</footer>
+		</div>
+	<% end %>
+
+</div>
 <table>
 	<thead>
 		<tr>
@@ -9,7 +32,6 @@
 		</tr>
 	</thead>
 	<tbody>
-	<% @articles.each do |article| %>
 		<tr>
 			<td><%= article.title %></td>
 			<td><%= article.description %></td>
@@ -17,7 +39,6 @@
 			<td><%= link_to 'Edit', edit_article_path(article) %></td>
 			<td><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" } %></td>
 		</tr>
-		<% end %>
 	</tbody>
 </table>
 
