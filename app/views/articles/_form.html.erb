@@ -1,16 +1,22 @@
 <%= render 'layouts/errors', obj: @article %>
 
-<%= form_with(model: @article, local: true)  do |f| %>
-<p>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</p>
-<p>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-</p>
-<p>
-  <%= f.submit %>
-</p>
+<%= form_with(model: @article, class: "is-primary", local: true) do |f| %>
+<div class="field">
+  <%= f.label :title, class: "label" %>
+  <div class="control">
+    <%= f.text_field :title , class: "input" %>
+  </div>
+</div>
+<div class="field">
+  <%= f.label :description, class: "label" %>
+  <div class="control">
+    <%= f.text_area :description , class: "textarea" %>
+  </div>
+</div>
+<div class="field">
+  <%= f.submit class: "button" %>
+</div>
 </div>
 <% end %>
+
+<%= link_to  "['Cancel and return to articles listing']", articles_path %>

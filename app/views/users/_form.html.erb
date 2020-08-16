@@ -1,20 +1,27 @@
 <%= render 'layouts/errors', obj: @user %>
 
-<%= form_with(model: @user, local: true) do |f| %>
+<%= form_with(model: @user, local: true, class: "is-primary") do |f| %>
 	<div class="field">
-		<%= f.label :username %>
-		<%= f.text_field :username, placeholder: "Enter a username." %>
+		<%= f.label :username, class: "label" %>
+			<div class="control">
+		<%= f.text_field :username, placeholder: "Enter a username.", class: "input" %>
+		</div>
 	</div>
 	<div class="field">
-		<%= f.label :email %>
-		<%= f.email_field :email, placeholder: "Enter your email." %>
+		<%= f.label :email, class: "label" %>
+			<div class="control">
+		<%= f.email_field :email, placeholder: "Enter your email.", class: "input" %>
+		</div>
 	</div>
 		<div class="field">
-		<%= f.label :password %>
-		<%= f.password_field :password, placeholder: "Choose a password." %>
+		<%= f.label :password, class: "label" %>
+			<div class="control">		
+		<%= f.password_field :password, placeholder: "Choose a password.", class: "input" %>
+		</div>
 	</div>
 	<div>
 		<%= f.submit(@user.new_record? ? "Sign Up" : "Update account", class: "button") %>
 	</div>
 </div>
 <% end %>
+

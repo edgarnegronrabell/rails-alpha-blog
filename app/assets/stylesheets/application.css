@@ -12380,7 +12380,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 .container .hero .hero-body {
-  background: no-repeat center/100% url("../../../public/images/Orange-Typewriter.png");
+  background: no-repeat center/100% url("/public/images/Orange-Typewriter.png");
 }
 
 .container .hero .hero-body h1 {
@@ -12389,5 +12389,18 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .container .hero .hero-body h2 {
   font-size: 3rem;
+}
+
+.container .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=application.css.map */
