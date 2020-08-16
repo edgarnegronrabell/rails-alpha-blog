@@ -1,0 +1,20 @@
+<%= render 'layouts/errors', obj: @user %>
+
+<%= form_with(model: @user, local: true) do |f| %>
+	<div class="field">
+		<%= f.label :username %>
+		<%= f.text_field :username, placeholder: "Enter a username." %>
+	</div>
+	<div class="field">
+		<%= f.label :email %>
+		<%= f.email_field :email, placeholder: "Enter your email." %>
+	</div>
+		<div class="field">
+		<%= f.label :password %>
+		<%= f.password_field :password, placeholder: "Choose a password." %>
+	</div>
+	<div>
+		<%= f.submit %>
+	</div>
+</div>
+<% end %>
