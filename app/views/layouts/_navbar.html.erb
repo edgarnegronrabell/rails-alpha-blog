@@ -23,16 +23,17 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More
+          Articles
         </a>
 
         <div class="navbar-dropdown">
-          <a class="navbar-item">
-            About
-          </a>
-          <a class="navbar-item">
-            Jobs
-          </a>
+          <div class="navbar-item">
+            <%= link_to  "Create new article", new_article_path %>
+          </div>
+          <div class="navbar-item">
+            <%= link_to "View articles", articles_path %>
+
+          </div>
           <a class="navbar-item">
             Contact
           </a>
