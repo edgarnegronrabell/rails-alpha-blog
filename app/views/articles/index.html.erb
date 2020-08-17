@@ -1,33 +1,5 @@
 <h1 class="title">Articles listing page</h1>
-<div class="container">
-	<div class="columns is-multiline">
-		<% @articles.each do |article| %>
-			<div class="card column is-one-third">
-				<header class="card-header">
-					<p class="card-header-title">
-					<%= article.title %>
-						by <%= article.user.username if article.user %>
-					</p>
-				</header>
-				<div class="card-content">
-					<div class="content">
-						<%= truncate(article.description, length: 100) %>
-					</div>
-				</div>
-				<footer class="card-footer">
-					<div class="card-footer-item ">
-						<%= link_to 'Show', article_path(article), class: "button is-success"%>
-					</div>
-					<div class="card-footer-item">
-						<%= link_to 'Edit', edit_article_path(article), class: "button is-info" %>
-					</div>
-					<div class="card-footer-item">
-						<%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger" %>
-					</div>
-				</footer>
-			</div>
-		<% end %>
-	</div>
-</div>
+
+<%= render 'article' %>
 
 <%= link_to  "Create new article", new_article_path %>
