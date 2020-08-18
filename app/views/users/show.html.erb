@@ -1,7 +1,15 @@
-<h1 class="title has-text-centered">
-  <%= @user.username %>'s profile
-</h1>
-
-<%= gravatar_for @user, size: 200 %>
-<h2 class="subtitle">Articles</h2>
-<%= render 'articles/article' %>
+<section class="section">
+  <h1 class="title has-text-centered">
+    <%= @user.username %>'s profile
+  </h1>
+  <div class="container">
+    <div class="profile-image">
+      <%= gravatar_for @user, size: 200 %>
+    </div>
+    <div class="has-text-centered">
+      <%= link_to "Edit your Profile", edit_user_path(@user), class: "button is-info" %>
+    </div>
+    <h2 class="subtitle">Articles</h2>
+    <%= render 'articles/article' %>
+  </div>
+</section>

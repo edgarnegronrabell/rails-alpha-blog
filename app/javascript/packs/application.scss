@@ -3,7 +3,6 @@
 
 .navbar {
 
-
 	.signup-button {
 		background-color: $flame-pea;
 		border: none;
@@ -43,5 +42,14 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+
+
+		.card-header {
+			align-items: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-bottom: 1.5vh;
+		}
 	}
 }

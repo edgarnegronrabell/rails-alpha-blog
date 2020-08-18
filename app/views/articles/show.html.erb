@@ -1,28 +1,33 @@
-<div class="container">
-	<div class="card">
-		<header class="card-header">
-			<h2 class=" title card-header-title">
-			<%= @article.title %>
-				<span>by <%= @article.user.username if @article.user %> </span>
-			</h2>
-		</header>
-		<div class="card-content">
-			<div class="content">
-				<%= simple_format(@article.description) %>
-			</div>
-		</div>
-		<footer class="card-footer">
-			<div class="card-footer-item">
-			</div>
-			<div class="card-footer-item">
-				<%= link_to 'Edit', edit_article_path(@article), class: "button is-info" %>
-			</div>
-			<div class="card-footer-item">
-				<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger"  %>
-			</div>
-		</footer>
-	</div>
-	<%= link_to  "Return to articles listing", articles_path %>
-</div>
-
-
+<section class="section">
+  <div class="container">
+    <div class="card">
+      <header class="card-header">
+        <h2 class=" title card-header-title">
+          <%= @article.title %>
+        </h2>
+        <h3 class="subtitle">
+          <span>
+            by <%= @article.user.username if @article.user %>
+          </span>
+        </h3>
+        <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <%= simple_format(@article.description) %>
+        </div>
+      </div>
+      <footer class="card-footer">
+        <div class="card-footer-item">
+        </div>
+        <div class="card-footer-item">
+          <%= link_to 'Edit', edit_article_path(@article), class: "button is-info" %>
+        </div>
+        <div class="card-footer-item">
+          <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger"  %>
+        </div>
+      </footer>
+    </div>
+    <%= link_to  "Return to articles listing", articles_path %>
+  </div>
+</section>
