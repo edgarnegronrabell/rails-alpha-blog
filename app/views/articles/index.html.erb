@@ -1,5 +1,10 @@
-<h1 class="title">Articles listing page</h1>
-
-<%= render 'article' %>
-
-<%= link_to  "Create new article", new_article_path %>
+<section class="section">
+  <h1 class="title has-text-centered">Articles listing page</h1>
+  <div class="flickr_pagination">
+    <%= will_paginate @articles , :container => false %>
+  </div>
+  <%= render 'article' %>
+  <div class="flickr_pagination">
+    <%= will_paginate @articles , :container => false %>
+  </div>
+</section>
