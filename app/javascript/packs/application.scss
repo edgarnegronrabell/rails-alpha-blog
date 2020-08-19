@@ -2,7 +2,6 @@
 @import '../../../node_modules/bulma/bulma.sass';
 
 .navbar {
-
 	.signup-button {
 		background-color: $flame-pea;
 		border: none;
@@ -15,6 +14,9 @@
 	}
 }
 
+a {
+	color: $flame-pea;
+}
 
 .container {
 	align-items: center;
@@ -64,17 +66,17 @@
 			.current {
 				font-style: normal;
 				font-weight: bold;
-				color: #ff0084;
+				color: $flame-pea;
 			}
 
 			a {
 				border: 1px solid #dddddd;
-				color: #0063dc;
+				color: $info;
 				text-decoration: none;
 
 				&:hover, &:focus {
 					border-color: #003366;
-					background: #0063dc;
+					background: $info;
 					color: white;
 				}
 			}

@@ -12362,6 +12362,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   color: #273B48;
 }
 
+a {
+  color: #D7593C;
+}
+
 .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -12426,18 +12430,18 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .container .section .flickr_pagination .current {
   font-style: normal;
   font-weight: bold;
-  color: #ff0084;
+  color: #D7593C;
 }
 
 .container .section .flickr_pagination a {
   border: 1px solid #dddddd;
-  color: #0063dc;
+  color: #273B48;
   text-decoration: none;
 }
 
 .container .section .flickr_pagination a:hover, .container .section .flickr_pagination a:focus {
   border-color: #003366;
-  background: #0063dc;
+  background: #273B48;
   color: white;
 }
 
