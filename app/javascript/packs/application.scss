@@ -60,7 +60,7 @@ a {
 			}
 
 			.disabled {
-				color: #aaaaaa;
+				color: $text;
 			}
 
 			.current {
@@ -70,7 +70,7 @@ a {
 			}
 
 			a {
-				border: 1px solid #dddddd;
+				border: 1px solid $text;
 				color: $info;
 				text-decoration: none;
 

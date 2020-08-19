@@ -12424,7 +12424,7 @@ a {
 }
 
 .container .section .flickr_pagination .disabled {
-  color: #aaaaaa;
+  color: #4a4a4a;
 }
 
 .container .section .flickr_pagination .current {
@@ -12434,7 +12434,7 @@ a {
 }
 
 .container .section .flickr_pagination a {
-  border: 1px solid #dddddd;
+  border: 1px solid #4a4a4a;
   color: #273B48;
   text-decoration: none;
 }
