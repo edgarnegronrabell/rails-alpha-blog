@@ -1,0 +1,28 @@
+<section class="section">
+
+  <h1 class="title has-text-centered">Log In</h1>
+  <div class="container">
+
+    <%= form_with(scope: :session, url: login_path , class: "is-primary", local: true) do |f| %>
+    <div class="field">
+      <%= f.label :email, class: "label" %>
+      <div class="control">
+        <%= f.email_field :email, placeholder: "Enter your email.", class: "input" %>
+      </div>
+    </div>
+    <div class="field">
+      <%= f.label :password, class: "label" %>
+      <div class="control">
+        <%= f.password_field :password, placeholder: "Enter your password.", class: "input" %>
+      </div>
+    </div>
+    <div>
+      <%= f.submit "Log in", class: "button login-button" %>
+    </div>
+  </div>
+  <% end %>
+
+
+
+  </div>
+</section>
