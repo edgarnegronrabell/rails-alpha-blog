@@ -24,7 +24,7 @@
           <%= link_to 'Edit', edit_article_path(@article), class: "button is-info" %>
         </div>
         <div class="card-footer-item">
-          <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger"  %>
+          <%= button_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger"  %>
         </div>
       </footer>
     </div>
