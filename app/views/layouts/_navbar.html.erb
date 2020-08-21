@@ -25,16 +25,15 @@
         </a>
 
         <div class="navbar-dropdown">
-          <div class="navbar-item">
-            <%= link_to  "Create new article", new_article_path %>
-          </div>
-          <div class="navbar-item">
-            <%= link_to "View articles", articles_path %>
+          <% if logged_in? %>
 
+          <div class="navbar-item">
+            <%= link_to  "Create new article", new_article_path, class: "dropdown-item" %>
           </div>
-          <a class="navbar-item">
-            Contact
-          </a>
+          <% end %>
+          <div class="navbar-item">
+            <%= link_to "View articles", articles_path, class: "dropdown-item" %>
+          </div>
           <hr class="navbar-divider">
           <a class="navbar-item">
             Report an issue
@@ -47,7 +46,19 @@
       <div class="navbar-item">
 
         <% if logged_in? %>
-        <%= link_to current_user.username, user_path(current_user), class: "navbar-item" %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to current_user.username, user_path(current_user), class: "navbar-link" %>
+        <div class="navbar-dropdown">
+          <% if logged_in? %>
+          <div class="navbar-item">
+            <%= link_to  "View your profile", user_path(current_user), class: "dropdown-item" %>
+          </div>
+          <% end %>
+          <div class="navbar-item">
+            <%= link_to  "Edit your profile", edit_user_path(current_user), class: "dropdown-item" %>
+          </div>
+        </div>
+      </div>
         <%= button_to  "Logout", logout_path, method: :delete, class: "button logout-button is-light" %>
         <% else %>
         <div class="buttons">

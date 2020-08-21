@@ -98,6 +98,10 @@ a {
 			}
 		}
 		
+		.column.is-one-third {
+			min-width: 400px;
+		}
+
 		.card-header {
 			align-items: center;
 			display: flex;
@@ -105,5 +109,11 @@ a {
 			justify-content: center;
 			padding-bottom: 1.5vh;
 		}
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.column.is-one-third {
+		min-width: 0;
 	}
 }

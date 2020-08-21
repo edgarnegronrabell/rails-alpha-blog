@@ -20,9 +20,12 @@
           <div class="card-footer-item ">
             <%= link_to 'View profile', user, class: "button is-success"%>
           </div>
+          <% if logged_in? && user == current_user %>
+
           <div class="card-footer-item">
             <%= link_to 'Edit profile', edit_user_path(user), class: "button is-info" %>
           </div>
+          <% end %>
           <div class="card-footer-item">
             <small>Joined <%= time_ago_in_words(user.created_at) %> </small>
           </div>

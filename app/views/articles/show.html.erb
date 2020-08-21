@@ -21,11 +21,14 @@
         <div class="card-footer-item">
         </div>
         <div class="card-footer-item">
+          <% if logged_in? && @article.user == current_user %>
+
           <%= link_to 'Edit', edit_article_path(@article), class: "button is-info" %>
         </div>
         <div class="card-footer-item">
           <%= button_to 'Delete', article_path(@article), method: :delete, data: { confirm: "Are you sure?" }, class: "button is-danger"  %>
         </div>
+        <% end %>
       </footer>
     </div>
     <%= link_to  "Return to articles listing", articles_path %>
