@@ -47,7 +47,11 @@
 
         <% if logged_in? %>
         <div class="navbar-item has-dropdown is-hoverable">
-          <%= link_to current_user.username, user_path(current_user), class: "navbar-link" %>
+          <div class="navbar-item">
+          <%= "(Admin)" if current_user.admin? %> 
+          [<%= link_to current_user.username, user_path(current_user), class: "navbar-link" %>]
+          </div>
+
         <div class="navbar-dropdown">
           <% if logged_in? %>
           <div class="navbar-item">
