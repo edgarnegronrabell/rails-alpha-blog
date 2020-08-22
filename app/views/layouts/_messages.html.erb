@@ -1,5 +1,5 @@
   <% flash.each do |name, msg| %>
-  <div class="notification <%= name == "notice" ? "is-success" : "is-danger" %>">
+  <div class="notification <%= name == "notice" ? "is-success has-text-success-light" : "is-danger has-text-danger-light" %>">
     <button class="delete"></button>
     <%= msg %>
   </div>
