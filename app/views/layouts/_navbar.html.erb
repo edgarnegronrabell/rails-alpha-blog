@@ -57,9 +57,12 @@
           <div class="navbar-item">
             <%= link_to  "Edit your profile", edit_user_path(current_user), class: "dropdown-item" %>
           </div>
+          <div class="navbar-item">
+            <%= button_to "Delete profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "dropdown-item has-text-danger" %>
+          </div>
         </div>
       </div>
-        <%= button_to  "Logout", logout_path, method: :delete, class: "button logout-button is-light" %>
+        <%= button_to "Logout", logout_path, method: :delete, class: "button logout-button is-light" %>
         <% else %>
         <div class="buttons">
           <%= link_to  "Sign Up", signup_path, class: "button signup-button" %>
