@@ -1,0 +1,21 @@
+<section class="section">
+
+	<h1 class="title has-text-centered">Create a new category</h1>
+	
+	<div class="container">
+		<%= render 'layouts/errors', obj: @category %>
+		<%= form_with(model: @category, local: true, class: "is-primary") do |f| %>
+			<div class="field">
+				<%= f.label :name, "Category Name", class: "label" %>
+				<div class="control">
+					<%= f.text_field :name, placeholder: "Enter a new category name.", class: "input" %>
+				</div>
+			</div>
+			<div class="field">
+				<div class="control">
+					<%= f.submit class: "button" %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</section>
