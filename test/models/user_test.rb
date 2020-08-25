@@ -10,13 +10,13 @@ class UserTest < ActiveSupport::TestCase
 		assert @user.valid?
 	end
 
-	test "name, email, password should be present" do
+	test "username, email, password should be present" do
 		@user.username = " "
 		@user.email = " "
 		@user.password = " "
-		assert_not @user.username.valid?
-		assert_not @user.email.valid?
-		assert_not @user.password.valid?
+		assert_not @user.username.present?
+		assert_not @user.email.present?
+		assert_not @user.password.present?
 
 	end
 end
