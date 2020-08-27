@@ -40,6 +40,27 @@
           </a>
         </div>
       </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Categories
+        </a>
+
+        <div class="navbar-dropdown">
+          <% if logged_in? && current_user.admin? %>
+
+          <div class="navbar-item">
+            <%= link_to  "Create new category", new_category_path, class: "dropdown-item" %>
+          </div>
+          <% end %>
+          <div class="navbar-item">
+            <%= link_to "View categories", categories_path, class: "dropdown-item" %>
+          </div>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Report an issue
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="navbar-end">
@@ -48,24 +69,24 @@
         <% if logged_in? %>
         <div class="navbar-item has-dropdown is-hoverable">
           <div class="navbar-item">
-          <%= "(Admin)" if current_user.admin? %> 
-          [<%= link_to current_user.username, user_path(current_user), class: "navbar-link" %>]
+            <%= "(Admin)" if current_user.admin? %>
+            [<%= link_to current_user.username, user_path(current_user), class: "navbar-link" %>]
           </div>
 
-        <div class="navbar-dropdown">
-          <% if logged_in? %>
-          <div class="navbar-item">
-            <%= link_to  "View your profile", user_path(current_user), class: "dropdown-item" %>
-          </div>
-          <% end %>
-          <div class="navbar-item">
-            <%= link_to  "Edit your profile", edit_user_path(current_user), class: "dropdown-item" %>
-          </div>
-          <div class="navbar-item">
-            <%= button_to "Delete profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "dropdown-item has-text-danger" %>
+          <div class="navbar-dropdown">
+            <% if logged_in? %>
+            <div class="navbar-item">
+              <%= link_to  "View your profile", user_path(current_user), class: "dropdown-item" %>
+            </div>
+            <% end %>
+            <div class="navbar-item">
+              <%= link_to  "Edit your profile", edit_user_path(current_user), class: "dropdown-item" %>
+            </div>
+            <div class="navbar-item">
+              <%= button_to "Delete profile", user_path(current_user), method: :delete, data: { confirm: "Are you sure?" }, class: "dropdown-item has-text-danger" %>
+            </div>
           </div>
         </div>
-      </div>
         <%= button_to "Logout", logout_path, method: :delete, class: "button logout-button is-light" %>
         <% else %>
         <div class="buttons">
