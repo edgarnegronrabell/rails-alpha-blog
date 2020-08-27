@@ -1,0 +1,33 @@
+<section class="section">
+  <h1 class="title has-text-centered">Categories</h1>
+
+  <div class="flickr_pagination">
+    <%= will_paginate @categories , :container => false %>
+  </div>
+  <div class="container with-pagination">
+    <div class="columns is-multiline">
+      <% @categories.each do |category| %>
+      <div class="card column is-one-third">
+        <header class="card-header">
+          <p class="card-header-title">
+            <%= link_to category.name, category_path(category), class: "has-text-success" %>
+          </p>
+        </header>
+        <footer class="card-footer">
+          <div class="card-footer-item ">
+            <small>
+              <%= time_ago_in_words(category.created_at) %>
+              edited
+              <%= time_ago_in_words(category.updated_at) %>
+              ago
+            </small>
+          </div>
+        </footer>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="flickr_pagination">
+    <%= will_paginate @categories , :container => false %>
+  </div>
+</section>
