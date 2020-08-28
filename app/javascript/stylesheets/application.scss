@@ -45,10 +45,16 @@ a {
 	}
 
 	.section {
+		align-items: center;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
 
+		form {
+			select {
+				min-height: 70px;
+			}
+		}		
+		
 		.flickr_pagination {
 			text-align: center;
 			padding: 0.3em;
@@ -98,6 +104,8 @@ a {
 			}
 		}
 		
+
+
 		.column.is-one-third {
 			min-width: 400px;
 		}
@@ -112,8 +120,19 @@ a {
 	}
 }
 
-@media screen and (max-width: 769px) {
-	.column.is-one-third {
-		min-width: 0;
+@media screen and (min-width: 769px) {
+	.container {
+		.section {
+			form {
+				min-width: 500px;
+
+
+			}
+		
+			.column.is-one-third {
+				min-width: 0;
+			}
+		}
 	}
+
 }
