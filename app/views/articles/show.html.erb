@@ -11,6 +11,11 @@
           </span>
         </h3>
         <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
+        <% if @article.categories.any? %>
+        <div class="tags categories">
+          <%= render @article.categories %>
+        </div>
+        <% end %>
       </header>
       <div class="card-content">
         <div class="content">

@@ -26,7 +26,6 @@ a {
 	width: 100vw;
 	
 	.hero {
-
 		.hero-body {
 			background: center / contain no-repeat  url("../images/Orange-Typewriter.png");
 			
@@ -103,11 +102,9 @@ a {
 				margin-left: 1em;
 			}
 		}
-		
-
 
 		.column.is-one-third {
-			min-width: 400px;
+			// min-width: 400px;
 		}
 
 		.card-header {
@@ -116,6 +113,15 @@ a {
 			flex-direction: column;
 			justify-content: center;
 			padding-bottom: 1.5vh;
+
+			.categories {
+				margin: 3vh 0;
+
+				.tag {
+					background: $flame-pea;
+					color: $alabaster;
+				}
+			}
 		}
 	}
 }
@@ -130,7 +136,7 @@ a {
 			}
 		
 			.column.is-one-third {
-				min-width: 0;
+				min-width: 400px;
 			}
 		}
 	}

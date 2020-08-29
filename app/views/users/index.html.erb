@@ -1,6 +1,9 @@
 <section class="section">
 
   <h1 class="title has-text-centered">Alpha Bloggers</h1>
+  <div class="flickr_pagination">
+    <%= will_paginate @articles , :container => false %>
+  </div>
   <div class="container">
     <div class="columns is-multiline">
       <% @users.each do |user| %>
@@ -39,5 +42,8 @@
       </div>
       <% end %>
     </div>
+  </div>
+  <div class="flickr_pagination">
+    <%= will_paginate @articles , :container => false %>
   </div>
 </section>

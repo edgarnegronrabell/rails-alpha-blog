@@ -9,6 +9,11 @@
           by <%= link_to article.user.username, user_path(article.user) %>
           <% end %>
         </p>
+        <% if article.categories.any? %>
+        <div class="tags categories">
+          <%= render article.categories %>
+        </div>
+        <% end %>
       </header>
       <div class="card-content">
         <div class="content">
@@ -20,7 +25,7 @@
           <%= link_to 'View full article', article_path(article), class: "button is-success"%>
         </div>
         <div class="card-footer-item">
-        <% if logged_in? && (article.user == current_user || current_user.admin?) %>
+          <% if logged_in? && (article.user == current_user || current_user.admin?) %>
           <%= link_to 'Edit', edit_article_path(article), class: "button is-info" %>
         </div>
         <div class="card-footer-item">
